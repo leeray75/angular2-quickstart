@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Angular 2 Show Properties</title>
+
+    <!-- 1. Load libraries -->
+    <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        },
+        map: {
+            'angular2': '/node_modules/angular2',
+            'rxjs': '/node_modules/rxjs'
+        },				
+		defaultJSExtensions: true
+      });
+      System.import('app/show-properties')
+            .then(null, console.error.bind(console));
+    </script>
+    </head>
+
+    <!-- 3. Display the application -->
+    <body>
+    <display>Loading...</display>
+</body>
+</html>
